@@ -1,10 +1,10 @@
 <template>
   <div class="user">
     <div class="userDetail">
-      <img src="~/assets/images/grandmother.svg" alt="avatar_user" />
+      <img src="~/assets/images/grandmother.svg" alt="avatar_user">
       <div class="userResume">
         <div class="userName">
-          <h2>Aurélie Clavier</h2>
+          <h2>{{ $store.state.login.pseudo }}</h2>
         </div>
         <div class="timelineUser">
           <step-progress
