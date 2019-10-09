@@ -56,7 +56,7 @@ export default {
         return 2
       } else if (pts > 15000) {
         // this.$store.state.pointsCounter.msg =
-        //   'Bravo ! Tu as sauvé 5 bébés dauphins de Papouasie !'
+        //   'Bravo ! Tu as sauvé 5 bébés dauphins de Papouasie !  '
         return 3
       }
     }
