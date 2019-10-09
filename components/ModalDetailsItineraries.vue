@@ -98,7 +98,7 @@ export default {
         this.$store.state.pointsCounter.counter += this.currentPoints
         this.$store.state.pointsCounter.kiloCounter += this.currentKilometers
         this.$router.push({
-          path: '/classement'
+          path: '/userPage'
         })
       } catch (error) {}
     }

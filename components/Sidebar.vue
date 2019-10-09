@@ -114,7 +114,7 @@ export default {
         },
         {
           title: 'User',
-          href: '/classement',
+          href: '/userPage',
           hiddenOnCollapse: true,
           icon: {
             element: 'img',
