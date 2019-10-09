@@ -16,6 +16,8 @@
               <p class="text-left mb-1">Durée : {{$store.getters['marius/durationcurrent']}} min</p>
               <p class="text-left mb-0 pb-1">Points : {{ currentPoints }} pts
                 <b-button @click="submitPoints" class="btn-go">J'y vais !</b-button> </p>
+
+              <input
             </div>
 
             <img
@@ -72,6 +74,9 @@ export default {
     }
   }),
   computed: {
+    currentKilometers(){
+      return Math.round(this.$store.getters['marius/distancecurrent'] / 1000)
+    },
     currentPoints(){
       let result = Math.round(this.$store.getters['marius/distancecurrent'] / 4) - Math.round(this.$store.getters['marius/co2current'])
       if(result >= 0){
@@ -85,8 +90,9 @@ export default {
     async submitPoints() {
       try {
         this.$store.state.pointsCounter.counter += this.currentPoints
+        this.$store.state.pointsCounter.kiloCounter += this.currentKilometers
         this.$router.push({
-          path: '/points'
+          path: '/userPage'
         })
       } catch (error) {
       }

@@ -1,6 +1,8 @@
 <template>
   <div id="pointsPage">
     <p>{{ $store.state.pointsCounter.counter }}</p>
+    <p>{{ $store.state.pointsCounter.kiloCounter }}</p>
+    <p>{{ $store.state.pointsCounter.msg }}</p>
   </div>
 </template>
 
