@@ -7,20 +7,13 @@
       >
         <div class="modal-body">
           <p class="text-white text-center">CE QUE TU FAIS ACTUELLEMENT:</p>
-          <div
-            id="current-itineraries"
-            class="bg-light itineraries px-3 py-3 d-flex justify-content-between"
-          >
+          <div class="bg-light itineraries px-3 py-3 d-flex justify-content-between">
             <div>
               <p class="text-left mb-1 font-weight-bold">{{modes[$store.getters['marius/getMode']]}}</p>
               <p
                 class="text-left mb-1"
               >Emission de Co2 : {{Math.round($store.getters['marius/co2current'])}} g/km</p>
               <p class="text-left mb-1">Durée : {{$store.getters['marius/durationcurrent']}} min</p>
-              <p class="text-left mb-0 pb-1">
-                Points : {{ currentPoints }} pts
-                <b-button @click="submitPoints" class="btn-go">J'y vais !</b-button>
-              </p>
             </div>
 
             <img
@@ -76,33 +69,7 @@ export default {
       bss: 'LeVélo et marche à pied',
       car: 'En voiture'
     }
-  }),
-  computed: {
-    currentKilometers() {
-      return Math.round(this.$store.getters['marius/distancecurrent'] / 1000)
-    },
-    currentPoints() {
-      let result =
-        Math.round(this.$store.getters['marius/distancecurrent'] / 4) -
-        Math.round(this.$store.getters['marius/co2current'])
-      if (result >= 0) {
-        return result
-      } else {
-        return 0
-      }
-    }
-  },
-  methods: {
-    async submitPoints() {
-      try {
-        this.$store.state.pointsCounter.counter += this.currentPoints
-        this.$store.state.pointsCounter.kiloCounter += this.currentKilometers
-        this.$router.push({
-          path: '/userPage'
-        })
-      } catch (error) {}
-    }
-  }
+  })
 }
 </script>
 
@@ -133,14 +100,10 @@ export default {
   }
 
   .itineraries {
-    height: 105px;
+    height: 103px;
     margin: 10px 7px;
     border-radius: 10px;
     position: relative;
-  }
-
-  #current-itineraries {
-    height: 143px;
   }
 
   .iconVehicule {
@@ -151,22 +114,6 @@ export default {
 
   .transport_now {
     border-bottom: 3px solid green !important;
-  }
-  .btn-go {
-    padding: 4px 10px;
-    background-color: #25a9e8;
-    border: 1px solid #25a9e8;
-    color: white;
-    border-radius: 6px;
-    margin-left: 10px;
-    text-decoration: none;
-    transition: 0.2s ease;
-    font-size: 15px;
-  }
-  .btn-go:hover {
-    background-color: white;
-    border: 1px solid #25a9e8;
-    color: #25a9e8;
   }
 }
 </style>

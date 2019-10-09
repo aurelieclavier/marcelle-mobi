@@ -11,6 +11,7 @@
       width="270px"
     >
       <div slot="header" class="vsm--item text-right" @click="collapsed = !collapsed">
+        <img src="~/assets/images/logout.svg" alt="close" class="close-svg m-3" style="float: left" @click="logout =!logout"/>
         <img src="~/assets/images/cancel.svg" alt="close" class="close-svg m-3" />
       </div>
       <span slot="toggle-icon"></span>
@@ -24,10 +25,42 @@ export default {
   components: {
     SidebarMenu
   },
-  data() {
+  props :
+  {
+    userConnected : true,
+  },
+   data() {
     return {
       collapsed: true,
       menu: [
+         {
+          title: 'Se déconnecter',
+          href: '/logout',
+          hiddenOnCollapse: true,
+          hidden : !this.userConnected,
+          icon: {
+            element: 'img',
+            class: 'icon-sidebar',
+            id: 'co',
+            attributes: {
+              src: require('~/assets/images/avatar.png')
+            }
+          }
+        },
+         {
+          title: 'Se connecter',
+          href: '/login/login',
+          hiddenOnCollapse: true,
+          hidden : this.userConnected,
+          icon: {
+            element: 'img',
+            class: 'icon-sidebar',
+            id: 'co',
+            attributes: {
+              src: require('~/assets/images/avatar.png')
+            }
+          }
+        },
         {
           title: 'Accueil',
           href: '/',
@@ -103,18 +136,6 @@ export default {
         {
           title: 'À propos',
           href: '/apropos',
-          hiddenOnCollapse: true,
-          icon: {
-            element: 'img',
-            class: 'icon-sidebar',
-            attributes: {
-              src: require('~/assets/images/help.svg')
-            }
-          }
-        },
-        {
-          title: 'User',
-          href: '/userPage',
           hiddenOnCollapse: true,
           icon: {
             element: 'img',
