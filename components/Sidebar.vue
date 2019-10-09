@@ -35,7 +35,7 @@ export default {
       menu: [
          {
           title: 'Se déconnecter',
-          href: '/logout',
+          href: '/',
           hiddenOnCollapse: true,
           hidden : !this.userConnected,
           icon: {
@@ -97,6 +97,7 @@ export default {
             }
           }
         },
+       
         {
           title: 'Analyser mon trajet',
           href: '/marius',
@@ -133,6 +134,19 @@ export default {
             }
           }
         },
+         {
+          title: 'Classement',
+          href: '/rank',
+          hiddenOnCollapse: true,
+          icon: {
+            element: 'img',
+            class: 'icon-sidebar',
+            id: 'co',
+            attributes: {
+              src: require('~/assets/images/trophy.svg')
+            }
+          }
+        },
         {
           title: 'À propos',
           href: '/apropos',
@@ -154,7 +168,9 @@ export default {
     }
   }
 }
+
 </script>
+
 
 <style lang="scss">
 #sidebarComponent {
@@ -209,3 +225,4 @@ export default {
   }
 }
 </style>
+
