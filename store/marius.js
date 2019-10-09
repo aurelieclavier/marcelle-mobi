@@ -23,6 +23,7 @@ export const getters = ({
   co2current: state => state.itineraries.current.co2Emission.value,
   getMode: state => state.itineraries.current.tags[0],
   durationcurrent: state => Math.round(state.itineraries.current.duration / 60),
+  distancecurrent: state => state.itineraries.current.distances.taxi + state.itineraries.current.distances.car + state.itineraries.current.distances.walking + state.itineraries.current.distances.bike + state.itineraries.current.distances.ridesharing,
 
   // Alternative Details
   alternativesDetails: state => {
