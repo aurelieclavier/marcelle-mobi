@@ -1,0 +1,9 @@
+body
+{
+    display: flex; 
+}
+#ptsUser , #rank 
+{
+    width: 50%;
+    height: 100vh;
+}
