@@ -19,7 +19,7 @@
               <p class="text-left mb-1">Durée : {{$store.getters['marius/durationcurrent']}} min</p>
               <p class="text-left mb-1">
                 Points : {{ currentPoints }} pts
-                <b-button @click="submitPoints" class="btn-go">Envoyer les points</b-button>
+                <b-button @click="submitPoints" class="btn-go">Mes points</b-button>
               </p>
             </div>
 

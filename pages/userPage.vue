@@ -45,16 +45,16 @@ export default {
     },
     getGradeIndex: function() {
       let pts = this.$store.state.pointsCounter.counter
-      if (pts <= 5000) {
+      if (pts <= 2500) {
         return 0
-      } else if (pts > 5000 && pts <= 10000) {
+      } else if (pts > 2500 && pts <= 5000) {
         //   this.$store.mutations.pointsCounter.SET_FIRST_MESSAGE()
         return 1
-      } else if (pts > 10000 && pts <= 15000) {
+      } else if (pts > 5000 && pts <= 7500) {
         // this.$store.state.pointsCounter.msg =
         //   'Bravo ! Tu as sauvé 3 bébés dauphins de Papouasie !'
         return 2
-      } else if (pts > 15000) {
+      } else if (pts > 7500) {
         // this.$store.state.pointsCounter.msg =
         //   'Bravo ! Tu as sauvé 5 bébés dauphins de Papouasie !  '
         return 3
